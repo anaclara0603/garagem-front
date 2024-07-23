@@ -30,7 +30,7 @@ function editar(modelo_para_editar) {
 }
 
 async function excluir(id) {
-  await modelosApi.excluirCor(id);
+  await modelosApi.excluirModelo(id);
   modelos.value = await modelosApi.buscarTodosOsModelos();
   limpar();
 }

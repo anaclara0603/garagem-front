@@ -30,7 +30,7 @@ function editar(marca_para_editar) {
 }
 
 async function excluir(id) {
-  await marcasApi.excluirCor(id);
+  await marcasApi.excluirMarca(id);
   marcas.value = await marcasApi.buscarTodasAsMarcas();
   limpar();
 }

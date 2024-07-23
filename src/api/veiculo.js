@@ -1,5 +1,5 @@
 import axios from "axios";
-export default class VeiculoApi {
+export default class VeiculosApi {
   async buscarTodosOsVeiculos() {
     const { data } = await axios.get("/veiculos/");
     return data.results;
