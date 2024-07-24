@@ -1,7 +1,32 @@
 <script setup>
 import { ref, reactive, onMounted } from "vue";
 import VeiculosApi from "@/api/veiculo";
+import ModelosApi from "@/api/modelo";
+import CoresApi from "@/api/cor";
+import AcessoriosApi from "@/api/acessorio";
+
 const veiculosApi = new VeiculosApi();
+const modelosApi = new ModelosApi();
+const coresApi = new CoresApi();
+const acessoriosApi = new AcessoriosApi();  
+
+const modelos = ref([]);
+
+onMounted(async () => {
+  modelos.value = await modelosApi.buscarTodosOsModelos();
+});
+
+const cores = ref([]);
+
+onMounted(async () => {
+  cores.value = await coresApi.buscarTodasAsCores();
+});
+
+const acessorios = ref([]);
+
+onMounted(async () => {
+  acessorios.value = await acessoriosApi.buscarTodosOsAcessorios();
+});
 
 const defaultVeiculo = { id: null, modelo: "" };
 const veiculos = ref([]);
@@ -41,7 +66,16 @@ async function excluir(id) {
   <h1>Veiculo</h1>
   <hr />
   <div class="form">
-    <input type="text" v-model="veiculo.modelo" placeholder="modelo" />
+    <select v-model="veiculo.modelo">
+    <option value="" selected disabled>Categorias</option>
+    <option v-for="modelo in modelos" :key="modelo.id" :value="modelo.id">{{ modelo.nome }}</option>
+    </select>
+    <select v-model="veiculo.cor">
+    <option value="" selected disabled>Cores</option>
+    <option v-for="cor in cores" :key="cor.id" :value="cor.id">{{ cor.descricao }}</option>
+    </select> 
+    <input type="number" v-model="veiculo.ano">
+    <input type="number" v-model="veiculo.valor">
     <button @click="salvar">Salvar</button>
     <button @click="limpar">Limpar</button>
   </div>
