@@ -26,3 +26,20 @@ const authStore = useAuthStore();
     <RouterView />
   </main>
 </template>
+<style scoped>
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 50%;
+}
+
+</style>

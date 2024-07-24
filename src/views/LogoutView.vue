@@ -13,7 +13,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <h1>Logging out..</h1>
+  <main>
+    <h1>Logging out..</h1>
+  </main>
 </template>
 
 <style></style>

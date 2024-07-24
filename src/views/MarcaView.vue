@@ -37,6 +37,7 @@ async function excluir(id) {
 </script>
 
 <template>
+<main>
   <h1>Marca</h1>
   <hr />
   <div class="form">
@@ -53,6 +54,7 @@ async function excluir(id) {
       <button @click="excluir(marca.id)">X</button>
     </li>
   </ul>
+</main>
 </template>
 
 <style></style>

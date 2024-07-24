@@ -56,7 +56,8 @@ async function excluir(id) {
 </script>
 
 <template>
-  <h1>Modelo</h1>
+  <main>
+    <h1>Modelo</h1>
   <hr />
   <div class="form">
     <input type="text" v-model="modelo.nome" placeholder="Nome" />
@@ -80,6 +81,7 @@ async function excluir(id) {
       <button @click="excluir(modelo.id)">X</button>
     </li>
   </ul>
+  </main>
 </template>
 
 <style></style>
