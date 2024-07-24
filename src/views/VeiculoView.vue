@@ -10,31 +10,21 @@ const modelosApi = new ModelosApi();
 const coresApi = new CoresApi();
 const acessoriosApi = new AcessoriosApi();  
 
-const modelos = ref([]);
-
-onMounted(async () => {
-  modelos.value = await modelosApi.buscarTodosOsModelos();
-});
-
-const cores = ref([]);
-
-onMounted(async () => {
-  cores.value = await coresApi.buscarTodasAsCores();
-});
-
-const acessorios = ref([]);
-
-onMounted(async () => {
-  acessorios.value = await acessoriosApi.buscarTodosOsAcessorios();
-});
-
-const defaultVeiculo = { id: null, modelo: "" };
+const defaultVeiculo = { id: null, modelo: null, cor: null, ano: null, preco: null, acessorios: [] };
 const veiculos = ref([]);
 const veiculo = reactive({ ...defaultVeiculo });
 
+const modelos = ref([]);
+const cores = ref([]);
+const acessorios = ref([]);
+
+
+
 onMounted(async () => {
+  modelos.value = await modelosApi.buscarTodosOsModelos();
+  cores.value = await coresApi.buscarTodasAsCores();
+  acessorios.value = await acessoriosApi.buscarTodosOsAcessorios();
   veiculos.value = await veiculosApi.buscarTodosOsVeiculos();
-  console.log(veiculo.value); 
 });
 
 function limpar() {
@@ -75,7 +65,11 @@ async function excluir(id) {
     <option v-for="cor in cores" :key="cor.id" :value="cor.id">{{ cor.descricao }}</option>
     </select> 
     <input type="number" v-model="veiculo.ano">
-    <input type="number" v-model="veiculo.valor">
+    <input type="number" v-model="veiculo.preco">
+    <select v-model="veiculo.acessorios" multiple>
+    <option value="" selected disabled>Acessorios</option>
+    <option v-for="acessorio in acessorios" :key="acessorio.id" :value="acessorio.id">{{ acessorio.descricao }}</option>
+    </select> 
     <button @click="salvar">Salvar</button>
     <button @click="limpar">Limpar</button>
   </div>
@@ -83,7 +77,7 @@ async function excluir(id) {
   <ul>
     <li v-for="veiculo in veiculos" :key="veiculo.id">
       <span @click="editar(veiculo)">
-        ({{ veiculo.id }}) - {{ veiculo.modelo }} -
+        ({{ veiculo.id }}) - {{ veiculo.modelo }} - {{ veiculo.cor }} - {{ veiculo.ano }} - {{ veiculo.preco }} - {{ veiculo.acessorios }}  
       </span>
       <button @click="excluir(veiculo.id)">X</button>
     </li>
