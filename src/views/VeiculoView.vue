@@ -8,7 +8,8 @@ const veiculos = ref([]);
 const veiculo = reactive({ ...defaultVeiculo });
 
 onMounted(async () => {
-  veiculo.value = await veiculosApi.buscarTodosOsVeiculos();
+  veiculos.value = await veiculosApi.buscarTodosOsVeiculos();
+  console.log(veiculo.value); 
 });
 
 function limpar() {

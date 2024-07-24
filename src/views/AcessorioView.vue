@@ -8,9 +8,7 @@ const acessorios = ref([]);
 const acessorio = reactive({ ...defaultAcessorio });
 
 onMounted(async () => {
-  acessorios.value = await acessorioApi.buscarTodosOsAcessorios();
-  console.log(acessorios.value)
-});
+  acessorios.value = await acessorioApi.buscarTodosOsAcessorios();});
 
 function limpar() {
   Object.assign(acessorio, { ...defaultAcessorio });
