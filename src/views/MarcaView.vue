@@ -37,41 +37,63 @@ async function excluir(id) {
 </script>
 
 <template>
-<main>
-  <h1>Marca</h1>
-  <hr />
-  <div class="form">
-    <input type="text" v-model="marca.nome" placeholder="Descrição" />
-    <input type="text" v-model="marca.nacionalidade" placeholder="Nacionalidade" />
-    <button @click="salvar">Salvar</button>
-    <button @click="limpar">Limpar</button>
-  </div>
-  <hr />
-  <ul>
-    <li v-for="marca in marcas" :key="marca.id">
-      <span @click="editar(cor)">
-        ({{ marca.id }}) - {{ marca.nome }} -{{ marca.nacionalidade }}
-      </span>
-      <button @click="excluir(marca.id)">X</button>
-    </li>
-  </ul>
-</main>
+  <main>
+    <div class="container">
+      <h1>Marca</h1>
+      <div class="form">
+        <input type="text" v-model="marca.nome" placeholder="Descrição" />
+        <input type="text" v-model="marca.nacionalidade" placeholder="Nacionalidade" />
+        <button @click="salvar">Salvar</button>
+        <button @click="limpar">Limpar</button>
+      </div>
+      <ul>
+        <li v-for="marca in marcas" :key="marca.id">
+          <span @click="editar(cor)">
+            ({{ marca.id }}) - {{ marca.nome }} -{{ marca.nacionalidade }}
+          </span>
+          <button @click="excluir(marca.id)">X</button>
+        </li>
+      </ul>
+    </div>
+  </main>
 </template>
 
 <style scoped>
-.form{
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: auto;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  justify-content: center;
+  align-items: center;
+  padding: auto;
+  background-color: #333;
+  color: white;
+  border-radius: 1vh;
+  padding: 1vh;
+  margin-top: 5vh;
+}
+.form {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-input{
+
+input {
   width: 10vw;
   height: 1vh;
   border-radius: 5px;
   border: none;
   padding: 0.5rem;
 }
-select{
+
+select {
   width: 11vw;
   height: 2vh;
   border-radius: 5px;

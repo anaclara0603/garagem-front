@@ -27,12 +27,33 @@ onMounted(() => {
 
 <template>
 <main>
+<div class="container">
   <h1>Garagem</h1>
   <img src="https://i.pinimg.com/564x/0f/76/1e/0f761e864e5b743c38b6faeaca18ceee.jpg" alt="">
-
+</div>
 </main>
 </template>
 <style scoped>
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: auto;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  justify-content: center;
+  align-items: center;
+  padding: auto;
+  background-color: #333;
+  color: white;
+  border-radius: 1vh;
+  padding: 1vh;
+  margin-top: 5vh;
+}
 img{
   width: 20vw;
   height: 30vh;

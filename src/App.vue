@@ -8,11 +8,7 @@ const authStore = useAuthStore();
 </script>
 
 <template>
-  <main>
-    <div class="formulario">
       <RouterView />
-    </div>
-  </main>
 </template>
 <style scoped>
 
