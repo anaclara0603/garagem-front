@@ -14,7 +14,7 @@
     "axios": "^1.7.2",
     "dotenv": "^16.4.5",
     "pinia": "^2.1.7",
-    "vite-plugin-pwa": "^0.20.0",
+    "vite-plugin-pwa": "^0.20.1",
     "vue": "^3.4.33",
     "vue-router": "4.4.0",
     "workbox-precaching": "^7.1.0"

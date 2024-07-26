@@ -39,13 +39,13 @@ async function excluir(id) {
 <template>
   <main>
     <h1>Cor</h1>
-  <hr />
   <div class="form">
     <input type="text" v-model="cor.descricao" placeholder="Descrição" />
+  </div>
+  <div class="button">
     <button @click="salvar">Salvar</button>
     <button @click="limpar">Limpar</button>
   </div>
-  <hr />
   <ul>
     <li v-for="cor in cores" :key="cor.id">
       <span @click="editar(cor)">
@@ -57,4 +57,26 @@ async function excluir(id) {
   </main>
 </template>
 
-<style></style>
+<style scoped>
+  input{
+  width: 10vw;
+  height: 1vh;
+  border-radius: 5px;
+  border: none;
+  padding: 0.5rem;
+}
+select{
+  width: 11vw;
+  height: 2vh;
+  border-radius: 5px;
+  border: none;
+  padding: 0.5rem;
+}
+.button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5vh;
+  }
+</style>

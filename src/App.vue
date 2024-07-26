@@ -27,7 +27,9 @@ const authStore = useAuthStore();
   </div>
   </header>
   <main>
-    <RouterView />
+    <div class="formulario">
+      <RouterView />
+    </div>
   </main>
 </template>
 <style scoped>
@@ -46,8 +48,19 @@ main{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: auto;
+}
+.formulario{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
   background-color: #333;
   width: 20vw;
+  margin-top: 10vh;
+  border-radius: 10px;
+  box-shadow: #333 0px 0px 10px;
+  color: white;
   padding: auto;
 }
 .itens{

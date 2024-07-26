@@ -58,7 +58,6 @@ async function excluir(id) {
 <template>
   <main>
     <h1>Modelo</h1>
-  <hr />
   <div class="form">
     <input type="text" v-model="modelo.nome" placeholder="Nome" />
     <select v-model="modelo.categoria">
@@ -72,7 +71,6 @@ async function excluir(id) {
     <button @click="salvar">Salvar</button>
     <button @click="limpar">Limpar</button>
   </div>
-  <hr />
   <ul>
     <li v-for="modelo in modelos" :key="modelo.id">
       <span @click="editar(modelo)">
@@ -89,5 +87,19 @@ async function excluir(id) {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+input{
+  width: 10vw;
+  height: 1vh;
+  border-radius: 5px;
+  border: none;
+  padding: 0.5rem;
+}
+select{
+  width: 11vw;
+  height: 2vh;
+  border-radius: 5px;
+  border: none;
+  padding: 0.5rem;
 }
 </style>

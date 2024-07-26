@@ -64,4 +64,18 @@ async function excluir(id) {
   flex-direction: column;
   gap: 20px;
 }
+input{
+  width: 10vw;
+  height: 1vh;
+  border-radius: 5px;
+  border: none;
+  padding: 0.5rem;
+}
+select{
+  width: 11vw;
+  height: 2vh;
+  border-radius: 5px;
+  border: none;
+  padding: 0.5rem;
+}
 </style>
