@@ -86,4 +86,10 @@ async function excluir(id) {
   </main>
 </template>
 
-<style></style>
+<style scoped>
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+</style>
