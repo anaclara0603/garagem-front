@@ -85,11 +85,26 @@ async function excluir(id) {
 </template>
 
 <style scoped>
-.form{
+/* main{
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: auto;
 }
+.form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #333;
+  width: 20vw;
+  margin-top: 10vh;
+  border-radius: 10px;
+  box-shadow: #333 0px 0px 10px;
+  color: white;
+  padding: auto;
+} */
 input{
   width: 10vw;
   height: 1vh;
